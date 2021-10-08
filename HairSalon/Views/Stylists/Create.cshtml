@@ -4,11 +4,18 @@
 
 @model Salon.Models.Stylist
 
-<h4>Add a new task</h4>
+<h4>Add a new Stylist</h4>
+<hr>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.StylistName)
-  @Html.TextBoxFor(model => model.StylistName)
+  <p>@Html.LabelFor(model => model.StylistName)-----
+  @Html.TextBoxFor(model => model.StylistName)</p>
+  <p>
+  @Html.LabelFor(model => model.StylistSpecialty)--
+  @Html.TextBoxFor(model => model.StylistSpecialty)
+  </p>
+
   <input type="submit" value="Add new Stylist" />
 }
+<hr>
 <p>@Html.ActionLink("Show all Stylists", "Index")</p>
