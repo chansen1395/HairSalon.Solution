@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Salon.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoList.Controllers
+namespace Salon.Controllers
 {
   public class ClientsController : Controller
   {
-    private readonly ToDoListContext _db;
+    private readonly SalonContext _db;
 
-    public ClientsController(ToDoListContext db)
+    public ClientsController(SalonContext db)
     {
       _db = db;
     }
