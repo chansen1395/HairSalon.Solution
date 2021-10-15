@@ -6,18 +6,34 @@
 
 <h4>Add a new client</h4>
 <hr>
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.ClientName)
-    @Html.TextBoxFor(model => model.ClientName)
-
-    @Html.LabelFor(model => model.ClientPhone)
-    @Html.TextBoxFor(model => model.ClientPhone, new { @type = "number" })
-    
-    @Html.LabelFor(model => model.Stylist)
-    @Html.DropDownList("StylistId")
-
-    <input type="submit" value="Add new client" class="btn btn-default" />
-}
+<div class="row">
+  <div class="col-md-4 text-center my-auto">
+    <div class="card card-block d-flex">
+      <div class="card-body align-items-center d-flex justify-content-center">
+        @using (Html.BeginForm())
+        {
+          <br>
+          <p>
+          @Html.LabelFor(model => model.ClientName):
+          @Html.TextBoxFor(model => model.ClientName)
+          </p>
+          <hr>
+          <p>
+            @Html.LabelFor(model => model.ClientPhone):
+            @Html.TextBoxFor(model => model.ClientPhone, new { @type = "number" })
+          </p>
+          <hr>
+          <p>
+            @Html.LabelFor(model => model.Stylist):
+            @Html.DropDownList("StylistId")
+          </p>
+          <hr>
+          <input type="submit" value="Add new client" class="btn btn-success" />
+          <br>
+        }
+      </div>
+    </div>
+  </div>
+</div>
 <hr>
 <p>@Html.ActionLink("Show all clients", "Index")</p>
