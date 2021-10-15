@@ -21,11 +21,19 @@ else
   }
   <h2>Client List:</h2>
   <hr>
-  @foreach (Client client in Model)
-  {
-    <li>@Html.ActionLink($"{client.ClientName}", "Details", new { id = client.ClientId }) | @client.Stylist.StylistName</li>
-  }
+      @foreach (Client client in Model)
+      {
+      <div class="col-md-4 text-center">
+        <div class="card card-block d-flex">
+          <div class="card-body align-items-center justify-content-center">
+            <li><b>Client Name: </b>@Html.ActionLink($"{client.ClientName}", "Details", new { id = client.ClientId })</li>
+            <li><b>Stylist Name: </b>@client.Stylist.StylistName</li>
+          </div>
+        </div>
+      </div>
+      }
   <hr>
   <p>@Html.ActionLink("Add new client", "Create")</p>
   <p>@Html.ActionLink("Return Home", "Index", "Home")</p>
 }
+

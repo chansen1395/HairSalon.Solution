@@ -8,20 +8,32 @@
 
 <h4>Edit this client: @Html.DisplayFor(model => model.ClientName)</h4>
 <hr>
-@using (Html.BeginForm())
-{
-    @Html.HiddenFor(model => model.ClientId)
+<div class="col-md-4 text-center">
+  <div class="card card-block d-flex">
+    <div class="card-body align-items-center justify-content-center">
+      @using (Html.BeginForm())
+      {
+          @Html.HiddenFor(model => model.ClientId)
 
-    @Html.LabelFor(model => model.ClientName)
-    @Html.EditorFor(model => model.ClientName)
 
-    @Html.LabelFor(model => model.ClientPhone)
-    @Html.EditorFor(model => model.ClientPhone)
+          <li>@Html.LabelFor(model => model.ClientName)
+          @Html.EditorFor(model => model.ClientName)</li>
 
-    @Html.LabelFor(model => model.Stylist)
-    @Html.DropDownList("StylistId")
+          <li>@Html.LabelFor(model => model.ClientPhone)
+          @Html.EditorFor(model => model.ClientPhone)</li>
 
-    <input type="submit" value="Save" />
-}
+          <li>@Html.LabelFor(model => model.Stylist)
+          @Html.DropDownList("StylistId")</li>
+          <br>
+          <input type="submit" value="Save" />
+      }
+    </div>
+  </div>
+</div>
 <hr>
 <p>@Html.ActionLink("Back to list", "Index")</p>
+
+      
+    <div class="card-body align-items-center d-flex justify-content-center">
+      
+    </div>

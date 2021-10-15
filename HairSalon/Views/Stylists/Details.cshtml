@@ -6,8 +6,15 @@
 
 <h2>Stylist Details</h2>
 <hr />
-<h3>Stylist Name: @Html.DisplayFor(model => model.StylistName)<h3>
-<h3>Stylist Specialty: @Html.DisplayFor(model => model.StylistSpecialty)<h3>
+<div class="col-md-5 text-center">
+  <div class="card card-block d-flex">
+    <div class="card-body align-items-center justify-content-center">
+      <h3>Stylist Name: @Html.DisplayFor(model => model.StylistName)<h3>
+      <hr>
+      <h3>Stylist Specialty: @Html.DisplayFor(model => model.StylistSpecialty)<h3>
+    </div>
+  </div>
+</div>
 
 @if (@Model.Clients.Count == 0)
 {
@@ -15,13 +22,20 @@
 }
 else
 {
-  <h3>Client List:</h3>
-  @foreach (Client client in Model.Clients)
-  {
-    <li style="color:green;">Name: @client.ClientName | Phone: @client.ClientPhone</li>
-  }
+<h3>---Client List:---</h3>
+<div class="col-md-4 text-center">
+  <div class="card card-block d-flex">
+    <div class="card-body align-items-center d-flex justify-content-center">
+      @foreach (Client client in Model.Clients)
+      {
+        <li style="color:green;">Name: @client.ClientName | Phone: @client.ClientPhone</li>
+      }
+    </div>
+  </div>
+</div>
 }
 <hr>
 <p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
+
