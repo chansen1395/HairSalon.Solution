@@ -12,6 +12,7 @@
 * HTML
 * MySQL
 * Linq
+* Entity Framework
 
 ## Description
 

@@ -5,17 +5,23 @@
 @model Salon.Models.Stylist
 
 <h4>Add a new Stylist</h4>
-<hr>
-@using (Html.BeginForm())
-{
-  <p>@Html.LabelFor(model => model.StylistName)-----
-  @Html.TextBoxFor(model => model.StylistName)</p>
-  <p>
-  @Html.LabelFor(model => model.StylistSpecialty)--
-  @Html.TextBoxFor(model => model.StylistSpecialty)
-  </p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+    <hr>
+    @using (Html.BeginForm())
+    {
+      <p>@Html.LabelFor(model => model.StylistName)-----
+      @Html.TextBoxFor(model => model.StylistName)</p>
+      <p>
+      @Html.LabelFor(model => model.StylistSpecialty)--
+      @Html.TextBoxFor(model => model.StylistSpecialty)
+      </p>
 
-  <input type="submit" value="Add new Stylist" />
-}
+      <input type="submit" value="Add new Stylist" />
+    }
+    </div>
+  </div>
+</div>
 <hr>
 <p>@Html.ActionLink("Show all Stylists", "Index")</p>
